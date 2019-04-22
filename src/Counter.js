@@ -26,11 +26,11 @@ class Counter extends Component {
     store.dispatch({amount, type: DECREMENT})
   }
 
-  undo () {
+  undo =()=> {
     store.dispatch({type: UNDO})
   }
 
-  redo () {
+  redo =()=> {
     store.dispatch({type: REDO})
   }
 
@@ -68,14 +68,14 @@ class Counter extends Component {
             <br />
             <button
               className="counter__button undo"
-              //disabled={previousValues.length === 0}
+              disabled={previousValues.length === 0}
               onClick = {this.undo}
             >
               Undo
             </button>
             <button
               className="counter__button redo"
-              //disabled={futureValues.length === 0}
+              disabled={futureValues.length === 0}
               onClick={this.redo}
             >
               Redo
